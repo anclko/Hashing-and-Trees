@@ -3,9 +3,9 @@ package Task1;
 public class Task1A {
     //min-heap
     public static class BinaryHeap {
-        private int[] Heap;
+        private final int[] Heap;
         private int index;
-        private int size;
+        private final int size;
 
         // Constructor
         public BinaryHeap(int size) {
