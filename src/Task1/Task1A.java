@@ -71,5 +71,13 @@ public class Task1A {
             }
         }
 
+        public void preOrder(int root) {
+            if (root < index) {
+                System.out.print(Heap[root] + " ");
+                preOrder(leftChild(root));
+                preOrder(rightChild(root));
+            }
+        }
+
     }
 }
