@@ -19,7 +19,7 @@ public class Main {
         System.out.println("\nPre-Order Traversal:");
         heap1A.preOrder(0);
         System.out.println("\nPost-Order Traversal:");
-
+        heap1A.postOrder(0);
         System.out.println("\nLevel-Order Traversal:");
 
 
