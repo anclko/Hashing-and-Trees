@@ -64,9 +64,13 @@ public class Task1A {
 
         //----------------------------------------- TASK 1C ----------------------------------//
         public void inOrder(int root) {
+            //check if within bounds
             if (root < index) {
+                //traverse left recursively
                 inOrder(leftChild(root));
+                //print value of current node
                 System.out.print(Heap[root] + " ");
+                //go through right
                 inOrder(rightChild(root));
             }
         }
@@ -76,6 +80,15 @@ public class Task1A {
                 System.out.print(Heap[root] + " ");
                 preOrder(leftChild(root));
                 preOrder(rightChild(root));
+            }
+        }
+
+        public void postOrder(int root) {
+            //opposite of preorder - node at end
+            if (root < index) {
+                postOrder(leftChild(root));
+                postOrder(rightChild(root));
+                System.out.print(Heap[root] + " ");
             }
         }
 
