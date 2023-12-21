@@ -92,5 +92,11 @@ public class Task1A {
             }
         }
 
+        public void levelOrder() {
+            for (int i = 0; i < index; i++) {
+                System.out.print(Heap[i] + " ");
+            }
+        }
+
     }
 }
