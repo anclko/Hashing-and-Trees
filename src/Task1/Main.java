@@ -16,9 +16,15 @@ public class Main {
         System.out.println("\nTask 1C: Traversals For Algorithm 1");
         System.out.println("In-Order Traversal:");
         heap1A.inOrder(0);
-        System.out.println(" ");
+        System.out.println("\nPre-Order Traversal:");
+        heap1A.preOrder(0);
+        System.out.println("\nPost-Order Traversal:");
 
-        System.out.println("---------------------------- Algorithm 2 ---------------------------------");
+        System.out.println("\nLevel-Order Traversal:");
+
+
+
+        System.out.println("\n---------------------------- Algorithm 2 ---------------------------------");
         // ----------------------- Task 1B + 1C --------------------------- //
         Task1B.linearHeap linearHeap = new Task1B.linearHeap(array);
         System.out.println("Task 1B: Linear Time Algorithm:");
