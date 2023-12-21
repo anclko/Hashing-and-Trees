@@ -35,7 +35,7 @@ public class Main {
         System.out.println("In-Order Traversal:");
         heap1B.inOrder(0);
         System.out.println("\nPre-Order Traversal:");
-
+        heap1B.preOrder(0);
         System.out.println("\nPost-Order Traversal:");
 
         System.out.println("\nLevel-Order Traversal:");
