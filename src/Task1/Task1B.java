@@ -57,9 +57,19 @@ public class Task1B {
 
         public void inOrder(int root) {
             if (root < size) {
+                //going through left child of current root
                 inOrder(2 * root + 1);
                 System.out.print(heap[root] + " ");
+                //going through right child of current root
                 inOrder(2 * root + 2);
+            }
+        }
+
+        public void preOrder(int root) {
+            if (root < size) {
+                System.out.print(heap[root] + " ");
+                preOrder(2 * root + 1);
+                preOrder(2 * root + 2);
             }
         }
     }
