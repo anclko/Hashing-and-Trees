@@ -29,11 +29,6 @@ public class Task1A {
             return (i * 2) + 2;
         }
 
-        //check if a node is leaf node
-        private boolean isLeaf(int i) {
-            return rightChild(i) >= size || leftChild(i) >= size;
-        }
-
         //insert an element into the heap
         public void insert(int element) {
             if (index >= size) {
@@ -66,5 +61,15 @@ public class Task1A {
             Heap[x] = Heap[y];
             Heap[y] = tmp;
         }
+
+        //----------------------------------------- TASK 1C ----------------------------------//
+        public void inOrder(int root) {
+            if (root < index) {
+                inOrder(leftChild(root));
+                System.out.print(Heap[root] + " ");
+                inOrder(rightChild(root));
+            }
+        }
+
     }
 }
