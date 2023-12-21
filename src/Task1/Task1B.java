@@ -52,5 +52,15 @@ public class Task1B {
             }
             System.out.println();
         }
+
+        //----------------------------------------- TASK 1C ----------------------------------//
+
+        public void inOrder(int root) {
+            if (root < size) {
+                inOrder(2 * root + 1);
+                System.out.print(heap[root] + " ");
+                inOrder(2 * root + 2);
+            }
+        }
     }
 }
