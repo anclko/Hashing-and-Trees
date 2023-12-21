@@ -72,5 +72,19 @@ public class Task1B {
                 preOrder(2 * root + 2);
             }
         }
+
+        public void postOrder(int root) {
+            if (root < size) {
+                postOrder(2 * root + 1);
+                postOrder(2 * root + 2);
+                System.out.print(heap[root] + " ");
+            }
+        }
+
+        public void levelOrder() {
+            for (int i = 0; i < size; i++) {
+                System.out.print(heap[i] + " ");
+            }
+        }
     }
 }
