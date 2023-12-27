@@ -5,23 +5,40 @@ import java.util.Arrays;
 public class Task1B {
     public static class linearHeap {
         private final int[] heap;
-        private final int size;
+        private int size;
 
+        // Constructor without automatic heapify
         public linearHeap(int[] elements) {
             this.heap = Arrays.copyOf(elements, elements.length);
             this.size = elements.length;
-            linearTime();
         }
 
-        private void linearTime() {
-            //look from the last non-leaf node and perform heapify
-            //for linear time
+        // Manual heapify method
+        public void buildHeap() {
+            // Look from the last non-leaf node and perform heapify for linear time
             for (int i = (size / 2) - 1; i >= 0; i--) {
-                heapify(i);
+                heapAlgo(i);
             }
         }
 
-        private void heapify(int i) {
+        // Insert a number into the heap
+        public void insert(int number) {
+            if (size >= heap.length) {
+                // If the heap is full
+                return;
+            }
+
+            // Insert the number at the end of the heap
+            heap[size] = number;
+            size++;
+
+            // Perform necessary heapify operations
+            for (int i = (size / 2) - 1; i >= 0; i--) {
+                heapAlgo(i);
+            }
+        }
+
+        private void heapAlgo(int i) {
             int leftChild = 2 * i + 1;
             int rightChild = 2 * i + 2;
             int smallest = i;
@@ -36,7 +53,7 @@ public class Task1B {
 
             if (smallest != i) {
                 swap(i, smallest);
-                heapify(smallest);
+                heapAlgo(smallest);
             }
         }
 
