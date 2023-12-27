@@ -32,7 +32,7 @@ public class Task1A {
         //insert an element into the heap
         public void insert(int element) {
             if (index >= size) {
-                //if heap full dont insert
+                //if heap full
                 return;
             }
             //insert element at the current index
