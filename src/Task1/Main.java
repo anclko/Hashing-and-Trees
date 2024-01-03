@@ -3,7 +3,7 @@ package Task1;
 public class Main {
     public static void main(String[] args) {
         int[] array = {10, 12, 1, 14, 6, 5, 8, 15, 3, 9, 7, 4, 11, 13, 2};
-        int[] arraySizeTaskD = {100, 500, 1000, 5000, 10000, 50000, 100000, 500000, 1000000};
+        int[] arraySizeTaskD = {100, 1000, 10000, 100000, 1000000};
 
         // ----------------------- Task 1A + 1C --------------------------- //
         System.out.println("\n---------------------------- Algorithm 1 ---------------------------------");
