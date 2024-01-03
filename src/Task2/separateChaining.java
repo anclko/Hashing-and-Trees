@@ -3,8 +3,8 @@ package Task2;
 import java.util.LinkedList;
 
 public class separateChaining {
-    private final int size;
-    private final LinkedList<Integer>[] buckets;
+    private int size;
+    private LinkedList<Integer>[] buckets;
 
     public separateChaining(int size) {
         this.size = size;
@@ -23,9 +23,34 @@ public class separateChaining {
         buckets[index].add(value);
     }
 
+    public void rehash() {
+        int newSize = size * 2;
+        LinkedList<Integer>[] newBuckets = new LinkedList[newSize];
+
+        for (LinkedList<Integer> bucket : buckets) {
+            for (int item : bucket) {
+                int index = item % newSize;
+                if (newBuckets[index] == null) {
+                    newBuckets[index] = new LinkedList<>();
+                }
+                newBuckets[index].add(item);
+            }
+        }
+
+        size = newSize;
+        buckets = newBuckets;
+    }
+
     public void display() {
         for (int i = 0; i < size; i++) {
-            System.out.print("Bucket " + i + ": " + buckets[i] + " -> null\n");
+            LinkedList<Integer> bucket = buckets[i];
+            System.out.print("Slot " + i + ": ");
+            if (bucket != null && !bucket.isEmpty()) {
+                for (int item : bucket) {
+                    System.out.print(item + " ");
+                }
+            }
+            System.out.println();
         }
     }
 }
