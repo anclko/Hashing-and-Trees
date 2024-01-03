@@ -1,11 +1,11 @@
 package Task2;
 
-public class linearProbing {
+public class quadraticProbing {
     private int size;
     private int[] buckets;
 
     // Constructor
-    public linearProbing(int size) {
+    public quadraticProbing(int size) {
         this.size = size;
         buckets = new int[size];
     }
@@ -14,11 +14,12 @@ public class linearProbing {
         return value % size;
     }
 
-    public void linearProbingInsert(int key) {
+    public void quadraticProbingInsert(int key) {
         int index = hashFunction(key);
+        int i = 0;
         while (buckets[index] != 0) {
-            // move to the next slot if the current slot is occupied
-            index = (index + 1) % size;
+            i++;
+            index = (index + i * i) % size;
         }
         buckets[index] = key;
     }
@@ -30,8 +31,10 @@ public class linearProbing {
         for (int item : buckets) {
             if (item != 0) {
                 int index = item % newSize;
+                int i = 0;
                 while (newBuckets[index] != 0) {
-                    index = (index + 1) % newSize;
+                    i++;
+                    index = (index + i * i) % newSize;
                 }
                 newBuckets[index] = item;
             }
