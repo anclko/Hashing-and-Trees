@@ -15,7 +15,7 @@ public class Task1B {
 
         // Manual heapify method
         public void buildHeap() {
-            // Look from the last non-leaf node and perform heapify for linear time
+            // Look from the last non-leaf node and perform buildheap for linear time
             for (int i = (size / 2) - 1; i >= 0; i--) {
                 heapAlgo(i);
             }
